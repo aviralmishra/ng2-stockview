@@ -12,7 +12,8 @@ import { StocksService } from './stock.service';
   directives: [ROUTER_DIRECTIVES]
 })
 export class StockListComponent implements OnInit {
-  pageTitle: string = 'Stock List';
+  pageTitle: string = 'Featured Stocks...';
+  featuredStocks: Array<string> = ['AAON', 'AAPL', 'GOOG', 'IBM', 'MSFT'];
   listFilter: string = '';
   errorMessage: string;
   stocks: IStock[];
@@ -21,13 +22,9 @@ export class StockListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._stockService.getStocks()
+    this._stockService.getStocks(this.featuredStocks)
       .subscribe(
       stocks => this.stocks = stocks,
       error => this.errorMessage = <any>error);
-  }
-
-  onRatingClicked(message: string): void {
-    this.pageTitle = 'Stock List: ' + message;
   }
 }

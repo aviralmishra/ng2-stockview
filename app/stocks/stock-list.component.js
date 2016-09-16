@@ -30,16 +30,14 @@ System.register(['angular2/core', 'angular2/router', './stock-filter.pipe', './s
             StockListComponent = (function () {
                 function StockListComponent(_stockService) {
                     this._stockService = _stockService;
-                    this.pageTitle = 'Stock List';
+                    this.pageTitle = 'Featured Stocks...';
+                    this.featuredStocks = ['AAON', 'AAPL', 'GOOG', 'IBM', 'MSFT'];
                     this.listFilter = '';
                 }
                 StockListComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this._stockService.getStocks()
+                    this._stockService.getStocks(this.featuredStocks)
                         .subscribe(function (stocks) { return _this.stocks = stocks; }, function (error) { return _this.errorMessage = error; });
-                };
-                StockListComponent.prototype.onRatingClicked = function (message) {
-                    this.pageTitle = 'Stock List: ' + message;
                 };
                 StockListComponent = __decorate([
                     core_1.Component({

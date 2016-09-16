@@ -5,6 +5,7 @@ import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/route
 
 import { StockListComponent } from './stocks/stock-list.component';
 import { StocksService } from './stocks/stock.service';
+import { Configuration } from "./config/app.config";
 import { WelcomeComponent } from './home/welcome.component';
 import { StockDetailComponent } from './stocks/stock-detail.component';
 
@@ -17,7 +18,7 @@ import { StockDetailComponent } from './stocks/stock-detail.component';
                 <a class='navbar-brand'>{{pageTitle}}</a>
                 <ul class='nav navbar-nav'>
                     <li><a [routerLink]="['Welcome']">Home</a></li>
-                    <li><a [routerLink]="['Stocks']">Stock List</a></li>
+                    <li><a [routerLink]="['Stocks']">Featured Stocks</a></li>
                 </ul>
             </div>
         </nav>
@@ -28,6 +29,7 @@ import { StockDetailComponent } from './stocks/stock-detail.component';
      `,
     directives: [ROUTER_DIRECTIVES],
     providers: [StocksService,
+                Configuration,
                 HTTP_PROVIDERS,
                 ROUTER_PROVIDERS]
 })

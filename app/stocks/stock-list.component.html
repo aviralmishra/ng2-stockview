@@ -36,8 +36,8 @@
               <a [routerLink]="['StockDetail',{id: stock.symbol}]">{{stock.symbol}}</a>
             </td>
             <td>{{ stock.symbol | lowercase }}</td>
-            <td>{{ stock.ask | currency:'USD':true:'1.2-2' }}</td>
-            <td>{{ stock.bid | currency:'USD':true:'1.2-2' }}</td>
+            <td>{{ stock.ask }}</td>
+            <td>{{ stock.bid }}</td>
             <td>{{ stock.last_trade_date }}</td>
           </tr>
         </tbody>
