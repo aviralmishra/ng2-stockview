@@ -1,0 +1,28 @@
+body {
+    background-color: gray-lightest;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #ddd;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #ddd;
+    padding: 18px;
+    text-align: left;
+}
+
+#wrapper {
+    width: 100%;
+}
+
+#page-wrapper {
+    padding: 0 15px;
+    min-height: 568px;
+    background-color: white;
+}
