@@ -1,5 +1,5 @@
 # ng2-stockview
-StockView is an Angular 2 based application that allows the user to specify stock(s) and fetch their market data from Yahoo Finance.
+StockView is an Angular 2 based application that allows the user to specify stock(s) and fetches their market data from Yahoo Finance.
 
 ## Instructions to run the application
 Run the following commands to run the application:
