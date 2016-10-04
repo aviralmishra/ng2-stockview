@@ -10,8 +10,8 @@ import { WelcomeComponent } from './home/welcome.component';
 import { StockDetailComponent } from './stocks/stock-detail.component';
 
 @Component({
-    selector: 'stockview-app',
-    template: `
+  selector: 'stockview-app',
+  template: `
     <div>
         <nav class='navbar navbar-default'>
             <div class='container-fluid'>
@@ -27,17 +27,17 @@ import { StockDetailComponent } from './stocks/stock-detail.component';
         </div>
      </div>
      `,
-    directives: [ROUTER_DIRECTIVES],
-    providers: [StocksService,
-                Configuration,
-                HTTP_PROVIDERS,
-                ROUTER_PROVIDERS]
+  directives: [ROUTER_DIRECTIVES],
+  providers: [StocksService,
+    Configuration,
+    HTTP_PROVIDERS,
+    ROUTER_PROVIDERS]
 })
 @RouteConfig([
-    { path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true },
-    { path: '/stocks', name: 'Stocks', component: StockListComponent },
-    { path: '/stock/:id', name: 'StockDetail', component: StockDetailComponent }
+  { path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true },
+  { path: '/stocks', name: 'Stocks', component: StockListComponent },
+  { path: '/stock/:id', name: 'StockDetail', component: StockDetailComponent }
 ])
 export class AppComponent {
-    pageTitle: string = 'Stock View';
+  pageTitle: string = 'Stock View';
 }

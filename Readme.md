@@ -21,22 +21,21 @@ Run the following commands to run the application:
 
 ## Note
 
-'app/config/app.config.js' file is not added to the repo as it contains sensitive information.
+'app/config/app.config.ts' file is not added to the repo as it contains sensitive information.
 
 You will need to provide this file to get the application running. Here is the template for the file:
 
 ```
-module.exports = function () {
+import { Injectable } from 'angular2/core';
 
-  var API_CONFIG = {
-    'API_URL': '<API_URL>',
-    'HEADER_MASHAPE_KEY': '<X-Mashape-Key Header>',
-    'HEADER_ACCEPT_KEY': 'Accept Header e.g. application/json'
-  };
+@Injectable()
+export class Configuration {
+  public API_URL: string = '<API_URL>';
 
-  return API_CONFIG;
-};
+  public HEADER_MASHAPE_KEY: string = '<X-Mashape-Key Header>';
+  public HEADER_ACCEPT_KEY: string = 'Accept Header e.g. application/json';
+
+  public QUERY_KEY_TEXT = '<Query Parameter Key (If any)>';
+}
+
 ```
-
-
-
